@@ -1,2 +1,2 @@
-# fuzzy-eureka
+# prince-albert
 Tinder but animals
