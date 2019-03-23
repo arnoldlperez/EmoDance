@@ -1,2 +1,2 @@
 # EmoDance
-Tinder but animals
+Face-Emoji Game
