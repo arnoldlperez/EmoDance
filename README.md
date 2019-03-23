@@ -1,2 +1,2 @@
-# prince-albert
+# EmoDance
 Tinder but animals
