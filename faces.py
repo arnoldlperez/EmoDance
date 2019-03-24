@@ -22,10 +22,21 @@ import argparse
 from google.cloud import vision
 from google.cloud.vision import types
 from PIL import Image, ImageDraw
+from flask import Flask, render_template
 # [END vision_face_detection_tutorial_imports]
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'C:/Users/Arnold/Documents/emo.json'
 
+# Flask code
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    picture = request.args['photo']
+    return render_template('index.html')
+
+if __name__=='__main__':
+    app.run(debug=True)
 
 # [START vision_face_detection_tutorial_send_request]
 def detect_face(face_file, max_results=4):
@@ -129,4 +140,4 @@ if __name__ == '__main__':
         help='the max results of face detection.')
     args = parser.parse_args()
 
-    main(args.input_image, args.output, args.max_results)
+    main(picture, args.output, args.max_results)
