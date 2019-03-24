@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>Emo-Dance</title>
-<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
-<link rel="stylesheet" href="Animation.css">
+  <meta charset="UTF-8">
+  <title>Emo-Dance</title>
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+  <link rel="stylesheet" href="templates/styles.css">
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+  <link rel="stylesheet" href="templates/Animation.css">
+
+  
 </head>
 
 <body>
@@ -18,10 +21,23 @@
             <h1 class="title is-1 animated infinite pulse delay-5s" id="title">Emo-Dance</h1>
         </article>
     </div>
-    </div>
+
+    </div> -->
     <div class="middle ">
         <p class="is-large">Welcome to <span class="title is-4 light">Emo-Dance</span>,<br>
         a fun application using <span class="light">Google Vision</span> where the user must make the emojis that appear with their face!</p>
+
+        <div class="booth columns is-mobile tile is-ancestor">
+            <div class="tile column is-parent back">
+                <article class="tile is-verticle is-child notification back" id="pix">
+                        <a href="#" id="capture" class="booth-capture-button button is-light is-large is-rounded" id="photo">Take photo</a>
+                <br> <video id="video" width="400" height="300"></video>
+                
+                <canvas id="canvas" width="400" height="300"></canvas>
+                <img id="photo" src="http://placekitten.com/g/400/300" alt="Photo of you">
+                </article>
+                </div>
+            </div>
     </div>
     
            
@@ -42,7 +58,7 @@
             <a href=""></a>
         </ul>
     </div>
-    
+    <script src="templates/photo.js"></script>
 </body>
 
 </html>
