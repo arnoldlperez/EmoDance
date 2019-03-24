@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>Emo-Dance</title>
-<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
-<link rel="stylesheet" href="Animation.css">
+  <meta charset="UTF-8">
+  <title>Emo-Dance</title>
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+  <link rel="stylesheet" href="Animation.css">
 </head>
 
 <body>
@@ -16,6 +17,12 @@
     <div class="middle">
         <p class="is-large">Welcome to <span class="title is-4">Emo-Dance</span>,<br>
         a fun application using <strong>Google Vision</strong> where the user must make the emojis that appear with their face!</p>
+        <div class="booth">
+          <video id="video" width="400" height="300"></video>
+          <a href="#" id="capture" class="booth-capture-button">Take photo</a>
+          <canvas id="canvas" width="400" height="300"></canvas>
+          <img id="photo" src="http://placekitten.com/g/400/300" alt="Photo of you">
+        </div>
     </div>
     <div class="bottom">
         <h3 class="title is-3 animated infinite pulse delay-2s">Meet the Developers</h3>
@@ -32,7 +39,7 @@
             <a href=""></a>
         </ul>
     </div>
-    
+    <script src="photo.js"></script>
 </body>
 
 </html>
