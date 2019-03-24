@@ -1,45 +1,24 @@
-#!/usr/bin/env python
-
-# Copyright 2015 Google, Inc
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-"""Draws squares around detected faces in the given image."""
 import os
 import argparse
 
-# [START vision_face_detection_tutorial_imports]
+
 from google.cloud import vision
 from google.cloud.vision import types
 from PIL import Image, ImageDraw
-# [END vision_face_detection_tutorial_imports]
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'C:/Users/Arnold/Documents/emo.json'
 
-
-# [START vision_face_detection_tutorial_send_request]
-def detect_face(face_file, max_results=4):
+def find_emotion(face_file):
     """Uses the Vision API to detect faces in the given file.
 
     Args:
         face_file: A file-like object containing an image with faces.
 
     Returns:
-        An array of Face objects with information about the picture.
+        A string with probable emotion
     """
-    # [START vision_face_detection_tutorial_client]
+
     client = vision.ImageAnnotatorClient()
-    # [END vision_face_detection_tutorial_client]
 
     content = face_file.read()
     image = types.Image(content=content)
@@ -96,28 +75,19 @@ def detect_face(face_file, max_results=4):
     return emotion
 
 
-# [START vision_face_detection_tutorial_run_application]
-def main(input_filename, output_filename, max_results):
+def main(input_filename):
     with open(input_filename, 'rb') as image:
-        emotion = detect_face(image, max_results)
+        emotion = find_emotion(image)
         print(emotion)
-        # Reset the file pointer, so we can read the file again
         image.seek(0)
-        #highlight_faces(image, faces, output_filename)
-# [END vision_face_detection_tutorial_run_application]
+
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Detects faces in the given image.')
+        description='Detects emotion in the given image.')
     parser.add_argument(
-        'input_image', help='the image you\'d like to detect faces in.')
-    parser.add_argument(
-        '--out', dest='output', default='out.jpg',
-        help='the name of the output file.')
-    parser.add_argument(
-        '--max-results', dest='max_results', default=4,
-        help='the max results of face detection.')
+        'input_image', help='the face you\'d like to detect emotion in.')
     args = parser.parse_args()
 
-    main(args.input_image, args.output, args.max_results)
+    main(args.input_image)
