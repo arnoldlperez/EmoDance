@@ -5,13 +5,9 @@ import argparse
 from google.cloud import vision
 from google.cloud.vision import types
 from PIL import Image, ImageDraw
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome()
-driver = webdriver.Firefox()
 # driver = webdriver.Chrome()
 # driver = webdriver.Firefox()
 
@@ -33,10 +29,8 @@ def find_emotion(face_file):
     client = vision.ImageAnnotatorClient()
 
     content = face_file.read()
-    image = types.Image(content=content)
     # image = types.Image(content=content)
     
-    response = client.face_detection(image=image)
     # response = client.face_detection(image=image)
     faces = response.face_annotations
 

@@ -1,14 +1,11 @@
-body{background:black;
 body{
     background:black;
     max-height: 100%;
-    padding 20px;}
     padding: 20px;
 }
     
     .back{
         background:black !important;
-        
     }
     p{
         font-size: 30px;
@@ -44,7 +41,6 @@ body{
         padding-top: 3vh !important;
     }
     .middle{
-        height: 40em;
         height: 50em;
     }
     body {
