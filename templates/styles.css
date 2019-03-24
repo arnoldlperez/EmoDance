@@ -70,24 +70,3 @@ a:hover{
     cursor: pointer;
     color: black;
 }
-
-.booth {
-    width: 400px;
-    background-color: #ccc;
-    border: 10px solid #ddd;
-    margin: 0 auto;
-}
-
-.booth-capture-button {
-    display: block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    background-color: cornflowerblue;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-}
-
-#canvas {
-    display: none;
-}
