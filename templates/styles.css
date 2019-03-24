@@ -10,6 +10,9 @@ body{background:black;
         font-size: 30px;
         
     }
+    #pix{
+        border: lightgray solid 2px;
+    }
     #title{
         color: whitesmoke;
         text-shadow: 4px 3px 0 #7A7A7A;

@@ -5,6 +5,14 @@ import argparse
 from google.cloud import vision
 from google.cloud.vision import types
 from PIL import Image, ImageDraw
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver = webdriver.Firefox()
+
+drive.get("/index.html")
+img = driver.find_element(By.TAG_NAME, "canvas").get_attribute("src")
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'emo.json'
 
@@ -88,6 +96,6 @@ if __name__ == '__main__':
         description='Detects emotion in the given image.')
     parser.add_argument(
         'input_image', help='the face you\'d like to detect emotion in.')
-    args = parser.parse_args()
+    args = parser.parse_args(img)
 
     main(args.input_image)

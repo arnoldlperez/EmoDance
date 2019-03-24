@@ -23,6 +23,7 @@
 
 	document.getElementById('capture').addEventListener('click', function() {
 		context.drawImage(video, 0, 0, 400, 300);
+		// saveAs(context, "test.png");
 		// photo.setAttribute('src', canvas.toDataURL('image/png'));
 	});
 
