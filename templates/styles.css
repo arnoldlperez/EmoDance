@@ -17,6 +17,9 @@ body{
     #title{
         color: whitesmoke;
         text-shadow: 4px 3px 0 #7A7A7A;
+
+    }
+    .mode{
         background-color: darkolivegreen !important;
         border-radius: 40px;
     }
