@@ -1,6 +1,10 @@
 body{background:black;
+body{
+    background:black;
     max-height: 100%;
     padding 20px;}
+    padding: 20px;
+}
     
     .back{
         background:black !important;
@@ -18,6 +22,9 @@ body{background:black;
         text-shadow: 4px 3px 0 #7A7A7A;
         background-color: darkolivegreen !important;
         border-radius: 40px;
+    }
+    .bottom{
+        padding:3em;
     }
     .tile{
         text-align: center;
@@ -38,6 +45,7 @@ body{background:black;
     }
     .middle{
         height: 40em;
+        height: 50em;
     }
     body {
         font-family: 'Exo', sans-serif;

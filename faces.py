@@ -7,12 +7,16 @@ from google.cloud.vision import types
 from PIL import Image, ImageDraw
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
 driver = webdriver.Firefox()
+# driver = webdriver.Chrome()
+# driver = webdriver.Firefox()
 
-drive.get("/index.html")
-img = driver.find_element(By.TAG_NAME, "canvas").get_attribute("src")
+# drive.get("/index.html")
+# img = driver.find_element(By.TAG_NAME, "canvas").get_attribute("src")
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'emo.json'
 
@@ -30,8 +34,10 @@ def find_emotion(face_file):
 
     content = face_file.read()
     image = types.Image(content=content)
+    # image = types.Image(content=content)
     
     response = client.face_detection(image=image)
+    # response = client.face_detection(image=image)
     faces = response.face_annotations
 
     # Names of likelihood from google.cloud.vision.enums
