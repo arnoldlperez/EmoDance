@@ -13,11 +13,15 @@ body{
     }
     #pix{
         border: lightgray solid 2px;
+
     }
     #title{
         color: whitesmoke;
         text-shadow: 4px 3px 0 #7A7A7A;
 
+    }
+    .capture{
+        width: 400px !important;
     }
     .mode{
         background-color: darkolivegreen !important;
@@ -43,8 +47,11 @@ body{
     .booth{
         padding-top: 3vh !important;
     }
+    #id{
+        color:black !important;
+    }
     .middle{
-        height: 50em;
+        height: 70em;
     }
     body {
         font-family: 'Exo', sans-serif;
