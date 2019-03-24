@@ -1,5 +1,9 @@
-.top{
-    background: darkolivegreen;
+body{background:black;
+max-height: 100%;
+padding 20px;}
+
+.back{
+    background:black !important;
     
 }
 p{
@@ -9,6 +13,8 @@ p{
 #title{
     color: whitesmoke;
     text-shadow: 4px 3px 0 #7A7A7A;
+    background-color: darkolivegreen !important;
+    border-radius: 20px;
 }
 .tile{
     text-align: center;
@@ -23,10 +29,10 @@ body {
 }
 h1 {
     text-align: center;
-    font-size: 5em;
 }
 p{
     text-align: center;
+    color: lightgray;
 }
 .title{
     
@@ -49,12 +55,15 @@ li {
 .developer{
     padding: 0 10vh 0 10vh;
     transition: transform 2s; /* Animation */
+    border-radius: 50px;
+    padding: 10px;
 }
 .developer:hover{
     transform: scale(1.5);
+
 }
-.name{
-    color:black;
+.name,.light{
+    color: aquamarine !important;
 }
 
 
@@ -64,9 +73,9 @@ li {
 a{
     text-decoration: none;
     font-size: 2rem;
-    color: black;
+    color: whitesmoke;
 }
 a:hover{
     cursor: pointer;
-    color: black;
+    color: palegreen;
 }
