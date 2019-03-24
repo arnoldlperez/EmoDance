@@ -1,0 +1,72 @@
+.top{
+    background: darkolivegreen;
+    
+}
+p{
+    font-size: 30px;
+    
+}
+#title{
+    color: whitesmoke;
+    text-shadow: 4px 3px 0 #7A7A7A;
+}
+.tile{
+    text-align: center;
+    
+}
+.middle{
+    height: 40em;
+}
+body {
+    font-family: 'Exo', sans-serif;
+    font-size: 20px; 
+}
+h1 {
+    text-align: center;
+    font-size: 5em;
+}
+p{
+    text-align: center;
+}
+.title{
+    
+    font-weight: 900;
+}
+
+h3{
+    text-align: center;
+}
+ul{
+    text-align: center;
+ 
+}
+ 
+li {
+    list-style-type: none;
+    display: inline-block;
+    
+}
+.developer{
+    padding: 0 10vh 0 10vh;
+    transition: transform 2s; /* Animation */
+}
+.developer:hover{
+    transform: scale(1.5);
+}
+.name{
+    color:black;
+}
+
+
+.name:hover{
+    animation: up-bump 0.4s ease;
+}
+a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+}
+a:hover{
+    cursor: pointer;
+    color: black;
+}
