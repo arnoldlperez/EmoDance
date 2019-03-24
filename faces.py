@@ -56,14 +56,20 @@ def detect_face(face_file, max_results=4):
         print('anger: {}'.format(likelihood_name[face.anger_likelihood]))
         print('joy: {}'.format(likelihood_name[face.joy_likelihood]))
         print('surprise: {}'.format(likelihood_name[face.surprise_likelihood]))
-        print('surprise: {}'.format(likelihood_name[face.surprise_likelihood]))
 
+        # if(face.anger_likelihood == 'POSSIBLE' | face.anger_likelihood == 'LIKELY' | face.anger_likelihood == 'VERY_LIKELY'):
+        #     emotion = "anger"
+        # if(face.joy_likelihood == 'POSSIBLE' | face.joy_likelihood == 'LIKELY' | face.joy_likelihood == 'VERY_LIKELY'):
+        #     emotion = "joy"
+        # if(face.surprise_likelihood == 'POSSIBLE' | face.surprise_likelihood == 'LIKELY' | face.surprise_likelihood == 'VERY_LIKELY'):
+        #     emotion = "surprise"
+        emotion = 0
         vertices = (['({},{})'.format(vertex.x, vertex.y)
                     for vertex in face.bounding_poly.vertices])
 
         print('face bounds: {}'.format(','.join(vertices)))
 
-    return client.face_detection(image=image, max_results=max_results).face_annotations
+    return emotion
 
 
 def highlight_faces(image, faces, output_filename):
@@ -99,14 +105,14 @@ def highlight_faces(image, faces, output_filename):
 # [START vision_face_detection_tutorial_run_application]
 def main(input_filename, output_filename, max_results):
     with open(input_filename, 'rb') as image:
-        faces = detect_face(image, max_results)
-        print('Found {} face{}'.format(
-            len(faces), '' if len(faces) == 1 else 's'))
+        emotion = detect_face(image, max_results)
+        print(emotion)
+
 
         print('Writing to file {}'.format(output_filename))
         # Reset the file pointer, so we can read the file again
         image.seek(0)
-        highlight_faces(image, faces, output_filename)
+        #highlight_faces(image, faces, output_filename)
 # [END vision_face_detection_tutorial_run_application]
 
 
