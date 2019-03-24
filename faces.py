@@ -62,14 +62,32 @@ def detect_face(face_file, max_results=4):
         if(anger == 'POSSIBLE' or anger == 'LIKELY' or anger == 'VERY_LIKELY'):
             emotion = "anger"
             probability = anger
+
         if(joy == 'POSSIBLE' or joy == 'LIKELY' or joy == 'VERY_LIKELY'):
-                if(emotion != 'unknown'):
-                    if( (emotion == 'POSSIBLE') and (joy == 'LIKELY' or joy == 'VERY_LIKELY') ):
-                        emotion = "joy"
+            if(emotion != 'unknown'):
+                if( (emotion == 'POSSIBLE') and (joy == 'LIKELY' or joy == 'VERY_LIKELY') ):
+                    emotion = "joy"
+                if( (emotion == 'LIKELY') and (joy == 'VERY_LIKELY') ):
+                    emotion = "joy"
+            emotion = "joy"
+
         if(surprise == 'POSSIBLE' or surprise == 'LIKELY' or surprise == 'VERY_LIKELY'):
+            if(emotion != 'unknown'):
+                if( (emotion == 'POSSIBLE') and (surprise == 'LIKELY' or surprise == 'VERY_LIKELY') ):
+                    emotion = "surprise"
+                if( (emotion == 'LIKELY') and (surprise == 'VERY_LIKELY') ):
+                    emotion = "surprise"
             emotion = "surprise"
+
         if(sorrow == 'POSSIBLE' or sorrow == 'LIKELY' or sorrow == 'VERY_LIKELY'):
+            if(emotion != 'unknown'):
+                if( (emotion == 'POSSIBLE') and (sorrow == 'LIKELY' or sorrow == 'VERY_LIKELY') ):
+                    emotion = "sorrow"
+                if( (emotion == 'LIKELY') and (sorrow == 'VERY_LIKELY') ):
+                    emotion = "sorrow"
             emotion = "sorrow"
+
+        print(anger, joy, surprise, sorrow)
 
         vertices = (['({},{})'.format(vertex.x, vertex.y)
                     for vertex in face.bounding_poly.vertices])
