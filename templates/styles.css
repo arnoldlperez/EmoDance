@@ -64,9 +64,13 @@ body{
         text-align: center;
         color: lightgray;
     }
-    .title{
+    #title{
         
-        font-weight: 900;
+        font-weight: 600;
+        animation-iteration-count:3;
+    }
+    #title:hover{
+        animation-iteration-count: infinite;
     }
     
     h3{
