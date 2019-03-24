@@ -14,18 +14,24 @@ body{background:black;
         color: whitesmoke;
         text-shadow: 4px 3px 0 #7A7A7A;
         background-color: darkolivegreen !important;
-        border-radius: 20px;
+        border-radius: 40px;
     }
     .tile{
         text-align: center;
         
     }
-    #pix{display: inline-block;}
+    img{
+        width: 20%;
+    }
+    #video,#canvas{
+        padding: 20px 20px 0 2px;
+        border-radius: 50%;
+    }
     #photo{
-        padding:10px;
+        padding:20px ;
     }
     .booth{
-        padding-top: 2vh !important;
+        padding-top: 3vh !important;
     }
     .middle{
         height: 40em;
