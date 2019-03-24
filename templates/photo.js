@@ -25,6 +25,24 @@
 		context.drawImage(video, 0, 0, 400, 300);
 		// saveAs(context, "test.png");
 		// photo.setAttribute('src', canvas.toDataURL('image/png'));
+		var selector = Math.floor(Math.random()*4);
+		switch (selector) {
+			case 0:
+				photo.src="./img/emotion/anger.png";
+				break;
+			case 1:
+				photo.src="./img/emotion/joy.png";
+				break;
+			case 2:
+				photo.src="./img/emotion/sad.png";
+				break;
+			case 3:
+				photo.src="./img/emotion/surprise.png";
+				break;
+			default:
+				photo.src="./img/emotion/joy.png";
+				break;
+		}
 	});
 
 })();
