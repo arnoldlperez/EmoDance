@@ -53,17 +53,20 @@ def detect_face(face_file, max_results=4):
     print('Faces:')
 
     for face in faces:
-        print('anger: {}'.format(likelihood_name[face.anger_likelihood]))
-        print('joy: {}'.format(likelihood_name[face.joy_likelihood]))
-        print('surprise: {}'.format(likelihood_name[face.surprise_likelihood]))
+        anger = ('{}'.format(likelihood_name[face.anger_likelihood]))
+        joy = ('{}'.format(likelihood_name[face.joy_likelihood]))
+        surprise = ('{}'.format(likelihood_name[face.surprise_likelihood]))
+        sorrow = ('{}'.format(likelihood_name[face.sorrow_likelihood]))
+        emotion = "unknown"
+        if(anger == 'POSSIBLE' or anger == 'LIKELY' or anger == 'VERY_LIKELY'):
+            emotion = "anger"
+        if(joy == 'POSSIBLE' or joy == 'LIKELY' or joy == 'VERY_LIKELY'):
+            emotion = "joy"
+        if(surprise == 'POSSIBLE' or surprise == 'LIKELY' or surprise == 'VERY_LIKELY'):
+            emotion = "surprise"
+        if(sorrow == 'POSSIBLE' or sorrow == 'LIKELY' or sorrow == 'VERY_LIKELY'):
+            emotion = "sorrow"
 
-        # if(face.anger_likelihood == 'POSSIBLE' | face.anger_likelihood == 'LIKELY' | face.anger_likelihood == 'VERY_LIKELY'):
-        #     emotion = "anger"
-        # if(face.joy_likelihood == 'POSSIBLE' | face.joy_likelihood == 'LIKELY' | face.joy_likelihood == 'VERY_LIKELY'):
-        #     emotion = "joy"
-        # if(face.surprise_likelihood == 'POSSIBLE' | face.surprise_likelihood == 'LIKELY' | face.surprise_likelihood == 'VERY_LIKELY'):
-        #     emotion = "surprise"
-        emotion = 0
         vertices = (['({},{})'.format(vertex.x, vertex.y)
                     for vertex in face.bounding_poly.vertices])
 
